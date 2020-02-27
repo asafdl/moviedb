@@ -1,0 +1,16 @@
+<div class="search-bar">
+  <div class="search-bar__logo-box">
+      <img [src]="logoImg"  alt="{{ logoImg }}" class="search-bar__logo">
+  </div>
+  <form action="#" class="search">
+    <input name="searchInput" [(ngModel)]="searchInput" type="text" class="search__input" placeholder="Search Movie">
+    <button (click)="searchMovie()" class="search__button">
+      <svg class="search__icon">
+        <use xlink:href="assets/img/sprite.svg#icon-magnifying-glass"></use>
+      </svg>
+    </button>
+  </form>
+  <div class="search-bar__add">
+    <button class="btn btn--purple" (click)="openAddPopup()">Add</button>
+  </div>
+</div>

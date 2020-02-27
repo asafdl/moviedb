@@ -1,0 +1,37 @@
+<nav class="filter">
+  <ul class="filter__genres">
+    <li [class.filter__genre--active]="currentGenre === 'ALL'" class="filter__genre">
+      <a (click)="changeGenre('ALL')" href="#" class="filter__link">
+        All
+      </a>
+    </li>
+    <li [class.filter__genre--active]="currentGenre === 'ACTION'" class="filter__genre">
+      <a (click)="changeGenre('ACTION')" href="#" class="filter__link">
+        Action
+      </a>
+    </li>
+    <li [class.filter__genre--active]="currentGenre === 'COMEDY'" class="filter__genre">
+      <a (click)="changeGenre('COMEDY')" href="#" class="filter__link">
+        Comedy
+      </a>
+    </li>
+    <li [class.filter__genre--active]="currentGenre === 'DOCUMENTARY'" class="filter__genre">
+        <a (click)="changeGenre('DOCUMENTARY')" href="#" class="filter__link">
+          Documentary
+        </a>
+      </li>
+    <li [class.filter__genre--active]="currentGenre === 'DRAMA'" class="filter__genre">
+      <a (click)="changeGenre('DRAMA')" href="#" class="filter__link">
+        Drama
+      </a>
+    </li>
+    <li [class.filter__genre--active]="currentGenre === 'HORROR'" class="filter__genre">
+        <a (click)="changeGenre('HORROR')" href="#" class="filter__link">
+          Horror
+        </a>
+      </li>
+    </ul>
+    <div class="filter__legal">
+      &copy; 2019 by Yaroslav Lutsky
+    </div>
+  </nav>

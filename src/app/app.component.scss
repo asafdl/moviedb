@@ -1,0 +1,36 @@
+@import './../scss/variables';
+@import './../scss/mixin';
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto ;
+  box-shadow: 0 2rem 6rem rgba(0,0,0,.3);
+}
+
+.main {
+  display: flex;
+
+
+  @include respond(phone) {
+    flex: 1;
+    display: block;
+  }
+}
+
+.filter-bar {
+  flex: 0 0 15%;
+  display: flex;
+
+  @include respond(phone) {
+    flex: 1;
+  }
+}
+
+.movie-list {
+  flex: 0 0 85%;
+  background-color: $color-white;
+
+  @include respond(phone) {
+    flex: 1;
+  }
+}

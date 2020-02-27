@@ -1,0 +1,30 @@
+<div class="movie">
+  <div class="movie__side movie__side--front">
+      <div class="movie__poster" [ngStyle]="setPosterStyle(movie.Poster)">
+      &nbsp;
+    </div>
+    <h4 class="movie__heading" [ngStyle]="setHeadingStyle(movie.Title)">
+      <span class="movie__heading-span">
+          {{ movie.Title | title }}
+      </span>
+    </h4>
+    <div class="movie__details">
+      <ul>
+        <li>Year: {{ movie.Year }}</li>
+        <li>Runtime: {{ movie.Runtime }}</li>
+        <li>Genre: {{ movie.Genre }}</li>
+        <li>Director: {{ movie.Director }}</li>
+      </ul>
+    </div>
+    <div class="movie__btn-box-phone">
+        <button class="btn btn--purple-phone" (click)="openUpdatePopup(movie)">Update</button>
+        <button class="btn btn--purple-phone" (click)="openDeletePopup(movie)">Delete</button>
+    </div>
+  </div>
+  <div class="movie__side movie__side--back">
+    <div class="movie__btn-box">
+        <button class="btn btn--purple" (click)="openUpdatePopup(movie)">Update</button>
+        <button class="btn btn--purple" (click)="openDeletePopup(movie)">Delete</button>
+    </div>
+  </div>
+</div>

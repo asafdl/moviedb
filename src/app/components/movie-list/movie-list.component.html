@@ -1,0 +1,11 @@
+<div class="movies">
+  <ng-container *ngFor="let m of (movies$ | async).movies">
+    <div @fade *ngIf="checkGenre(m)" class="movie-card">
+      <movie-card (openDeletePopupEvent)="openDeletePopup($event)" (openUpdatePopupEvent)="openUpdatePopup($event)" [movie]="m"></movie-card>
+    </div>
+  </ng-container>
+</div>
+
+<popup @fade [popupAction]="popupAction" [movie]="selectedMovie" (closePopupEvent)="closePopUp()" *ngIf="showPopup">
+
+</popup>

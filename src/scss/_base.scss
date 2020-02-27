@@ -1,0 +1,37 @@
+@import './scss/mixin';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+  box-sizing: border-box;
+
+  @include respond(tab-land) {
+    font-size: 55%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 49%;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $color-white;
+  background-image: linear-gradient(to right bottom, $color-grey-dark-3, $color-grey-dark);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

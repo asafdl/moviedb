@@ -1,0 +1,89 @@
+<form class="movie-form" [formGroup]="form" (ngSubmit)="submit()">
+  <h4 class="movie-form__heading" *ngIf="!movie">Add Movie</h4>
+  <h4 class="movie-form__heading" *ngIf="movie">Update Movie</h4>
+  <div class="movie-form__group movie-form__group--title">
+    <label for="title" class="movie-form__label">Title</label>
+    <input
+      formControlName="Title"
+      type="text"
+      class="movie-form__input"
+      id="title"
+      name="Title"
+      placeholder="Fight Club"
+      autofocus="autofocus"
+      required>
+    <div class="movie-form__error" *ngIf="Title.touched && Title.invalid && Title.errors" >
+      <div *ngIf="Title.errors.required">Title is required</div>
+      <div *ngIf="Title.errors.shouldBeUnique">Should be unique title</div>
+    </div>
+  </div>
+  <div class="movie-form__group movie-form__group--year">
+    <label for="year" class="movie-form__label">Year</label>
+    <input
+      formControlName="Year"
+      type="text"
+      class="movie-form__input"
+      id="year"
+      name="Year"
+      placeholder="1999"
+      autofocus="autofocus"
+      required>
+    <div class="movie-form__error" *ngIf="Year.touched && Year.invalid && Year.errors" >
+      <div *ngIf="Year.errors.required" >Year is required</div>
+      <div *ngIf="Year.errors.cannotContainLetters" >please insert valid year</div>
+    </div>
+  </div>
+  <div class="movie-form__group movie-form__group--runtime">
+    <label for="runtime" class="movie-form__label">RunTime</label>
+    <input
+      formControlName="Runtime"
+      type="text"
+      class="movie-form__input"
+      id="runtime"
+      name="Runtime"
+      placeholder="139 min"
+      autofocus="autofocus"
+      required>
+    <div class="movie-form__error" *ngIf="Runtime.touched && Runtime.invalid && Runtime.errors" >
+      <div *ngIf="Runtime.errors.required" >Runtime required</div>
+      <div *ngIf="Runtime.errors.notValidRuntime" >please insert valid runtime</div>
+    </div>
+  </div>
+  <div class="movie-form__group movie-form__group--genre">
+    <label for="genre" class="movie-form__label">Genre</label>
+    <input
+      formControlName="Genre"
+      type="text"
+      class="movie-form__input"
+      id="genre"
+      name="Genre"
+      placeholder="Drama, Action"
+      autofocus="autofocus"
+      required>
+    <div class="movie-form__error" *ngIf="Genre.touched && Genre.invalid && Genre.errors" >
+        
+      <div *ngIf="Genre.errors.required" >Genre is required</div>
+      <div *ngIf="Genre.errors.containsNotLetters" >Please use only letters</div>
+    </div>
+  </div>
+  <div class="movie-form__group movie-form__group--director">
+    <label for="director" class="movie-form__label">Director</label>
+    <input
+      formControlName="Director"
+      type="text"
+      class="movie-form__input"
+      id="director"
+      name="Director"
+      placeholder="David Fincher"
+      autofocus="autofocus"
+      required>
+    <div class="movie-form__error" *ngIf="Director.touched && Director.invalid && Director.errors ">
+      <div *ngIf="Director.errors.required" >Director is required</div>
+      <div *ngIf="Director.errors.containsNotLetters" >Please use only letters</div>
+    </div>
+  </div>
+  <div class="movie-form__group movie-form__group--btn">
+    <div><span class="movie-form__error--all"  *ngIf="form.invalid && isSubmitPressed">Please fill all the fields</span></div>
+    <button type="submit" class="btn btn--purple">Finish &rarr;</button>
+  </div>
+</form>

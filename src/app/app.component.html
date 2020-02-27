@@ -1,0 +1,10 @@
+<div class="container">
+  <header class="header">
+    <search-bar (openAddPopupEvent)="movieList.openAddPopup()"></search-bar>
+  </header>
+  <main class="main">
+    <filter-bar (changeGenreEvent)="movieList.changeGenre($event)" class="filter-bar"></filter-bar>
+    <movie-list #movieList class="movie-list"></movie-list>
+  </main>
+</div>
+

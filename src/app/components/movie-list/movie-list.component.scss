@@ -1,0 +1,24 @@
+@import './../../../scss/variables';
+@import './../../../scss/components';
+@import './../../../scss/mixin';
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  flex: 0 0 33.33333%;
+  padding: 2rem;
+  overflow: hidden;
+
+  @include respond(tab-land) {
+    flex: 0 0 50%;
+    padding: 1rem;
+  }
+
+  @include respond(phone) {
+    flex: 0 0 50%;
+    padding: 0.6rem;
+  }
+}

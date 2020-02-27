@@ -1,0 +1,22 @@
+<div class="popup" id="popup">
+    <div class="popup__content" (clickOutside)="closePopup()" [delayClickOutsideInit]="true">
+        <a href="#" (click)="closePopup()" class="popup__close">&times;</a>
+            <ng-container [ngSwitch]="popupAction">
+                <div *ngSwitchCase="'DELETE_MOVIE'">
+                <div class="popup__message-box">
+                    <p class="popup__message">Do you want to delete {{movie.Title}}?</p>
+                    <div class="popup__button-box">
+                       <button class="btn btn--purple" (click)="deleteMovie()">Yes</button>
+                       <button class="btn btn--alert" (click)="closePopup()">No</button>
+                    </div>
+                  </div>
+                  </div>
+                  <div *ngSwitchCase="'ADD_MOVIE'">
+                      <movie-form (closePopupEvent)="closePopup()" [movie]="null"></movie-form>
+                  </div>
+                  <div *ngSwitchCase="'UPDATE_MOVIE'">
+                      <movie-form (closePopupEvent)="closePopup()" [movie]="movie"></movie-form>
+                  </div>
+             </ng-container>
+    </div>
+</div>
